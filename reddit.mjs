@@ -24,8 +24,14 @@ const {argv} = yargs(process.argv);
 if(argv.top || argv.t){
     top();
 }
-else{
+else if(argv.homepost || argv.hp){
     homepost();
+}
+else if(argv.help || argv.h){
+    printHelp("",true)
+}
+else{
+    printHelp("Incorrect Usage",true)
 }
 
 async function top(){
@@ -66,6 +72,24 @@ async function homepost(){
     }
 }
     
+function printHelp(msg,includeHelp=false){
+    console.error(chalk.red(msg));
+    if(includeHelp){
+        console.log("");
+        console.log(chalk.cyan("reddit usage:"));
+        console.log("");
+        console.log(chalk.green("   reddit --[COMMAND] --[OPTIONS]"));
+        console.log("");
+        console.log(chalk.grey("   reddit --help or --h"));
+        console.log("");
+        console.log(chalk.gray("   reddit -homepost or --hp"));
+        console.log("");
+        console.log(chalk.gray("   reddit --top or --t"));
+        console.log("");
+        console.log(chalk.blue("   OPTIONS include --print"));
+    }
+}
+
 
 function onlyprint(title ,link){
     let ctitle = chalk.yellow(title)
