@@ -21,7 +21,7 @@ const {argv} = yargs(process.argv);
 //     }
 // }).argv
 
-if(argv.top){
+if(argv.top || argv.t){
     top();
 }
 else{
@@ -35,7 +35,7 @@ async function top(){
         const children = data.data.children;
         const randompost = children[Math.floor(Math.random()*children.length)];
         const link = `https://reddit.com${randompost.data.permalink}`;
-        if(argv.print){
+        if(argv.print || argv.p){
         onlyprint(randompost.data.title,link);
         }
         else{
@@ -54,7 +54,7 @@ async function homepost(){
         const children = data.data.children;
         const randompost = children[Math.floor(Math.random()*children.length)]
         const link = `https://reddit.com${randompost.data.permalink}`
-        if(argv.print){
+        if(argv.print || argv.p){
             onlyprint(randompost.data.title,link);
         }
         else{
