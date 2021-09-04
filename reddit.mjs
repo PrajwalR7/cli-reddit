@@ -6,18 +6,61 @@ import yargs from 'yargs';
 
 const {argv} = yargs(process.argv);
 
-const res=await fetch("https://www.reddit.com/.json");
-const data = await res.json()
-const children = data.data.children;
-const randompost = children[Math.floor(Math.random()*children.length)]
-const link = `https://reddit.com${randompost.data.permalink}`
+if(argv.top){
+    top();
+}
+else{
+    homepost();
+}
 
-if(argv.print){
+async function top(){
+    try {
+        const res = await fetch("https://reddit.com/.json")
+        const data = await res.json();
+        const children = data.data.children;
+        const randompost = children[Math.floor(Math.random()*children.length)];
+        const link = `https://reddit.com${randompost.data.permalink}`;
+        if(argv.print){
+        onlyprint(randompost.data.title,link);
+        }
+        else{
+            open(link);
+        }
+    } catch (error) {
+        console.log('Couldnt fetch the requested url');
+    }
+}
+
+async function homepost(){
+    try {
+        const res=await fetch("https://www.reddit.com/.json");
+        const data = await res.json()
+    } catch (error) {
+        const children = data.data.children;
+        const randompost = children[Math.floor(Math.random()*children.length)]
+        const link = `https://reddit.com${randompost.data.permalink}`
+        if(argv.print){
+            onlyprint(randompost.data.title,link);
+        }
+        else{
+            open(link);
+        }
+    }
+}
+    
+
+function onlyprint(title ,link){
     console.log(`
-    title:${randompost.data.title}
+    title:${title}
     link:${link}
     `);
 }
-else{
-    open(link)
-}
+// if(argv.print){
+//     console.log(`
+//     title:${randompost.data.title}
+//     link:${link}
+//     `);
+// }
+// else{
+//     open(link)
+// }
