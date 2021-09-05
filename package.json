@@ -1,8 +1,8 @@
 {
-  "name": "reddit-cli",
+  "name": "cli-reddit",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Command Line interface for veiwing reddit post",
+  "main": "reddit.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -13,8 +13,8 @@
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
+    "commander": "^8.1.0",
     "node-fetch": "^3.0.0",
-    "open": "^8.2.1",
-    "yargs": "^17.1.1"
+    "open": "^8.2.1"
   }
 }
