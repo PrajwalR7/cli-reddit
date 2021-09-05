@@ -53,8 +53,8 @@ This command intiates the search query against the value which you enter
 ```
 reddit --help
 ```
-To know more about commands enter the above command
-
+To know more about commands enter the above command\
+This package makes use of common js module export and ES module export\
 ## Package/App info
 ### Author
 Prajwal R
