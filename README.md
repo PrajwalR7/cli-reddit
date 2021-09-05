@@ -11,11 +11,11 @@ npm install cli-reddit -g
 ## Importing
 Import the entire package
 ```javascript
-const reddit = require('cli-reddit')
+import reddit from 'cli-reddit'
 ```
 Import only specific methods
 ```javascript
-const { homepost, top } = require('cli-reddit')
+import { homepost,top } from 'cli-reddit'
 ```
 Functionalities in this package are
 * Homepost
