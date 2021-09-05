@@ -15,7 +15,12 @@
     "cli-reddit",
     "cli"
   ],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PrajwalR7/reddit-cli.git"
+  },
+  "homepage": "https://github.com/PrajwalR7/reddit-cli",
+  "author": "Prajwal R <rameshprajwal21@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "chalk": "^4.1.2",
