@@ -58,3 +58,5 @@ This package makes use of common js module export and ES module export\
 ## Package/App info
 ### Author
 Prajwal R
+### License
+ISC
