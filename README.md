@@ -1,4 +1,4 @@
-# reddit-cli
+# CLI-Reddit
 ## How to install
 ### Install as package
 ```
