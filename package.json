@@ -9,6 +9,12 @@
   "bin": {
     "reddit": "./reddit.mjs"
   },
+  "keywords": [
+    "reddit",
+    "reddit-cli",
+    "cli-reddit",
+    "cli"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
