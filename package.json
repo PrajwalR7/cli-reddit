@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "reddit": "./reddit.mjs"
+    "reddit": "node --experimental-json-modules ./reddit.mjs"
   },
   "keywords": [
     "reddit",

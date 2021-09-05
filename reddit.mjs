@@ -4,9 +4,15 @@ import fetch from 'node-fetch';
 import open from 'open';
 import chalk from 'chalk';
 import { program } from 'commander';
-
+import { readFile, readFileSync } from 'fs';
+import { version as ver } from './package.json';
 // const {argv} = yargs(process.argv.slice(2));
 
+// const pjson = readFileSync(new URL('package.json',import.meta.url),'utf-8',(err)=>{
+//     //console.log(err);
+// });
+
+//  console.log(ver);
 
 const options = program.opts();
 
