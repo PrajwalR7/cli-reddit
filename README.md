@@ -23,6 +23,8 @@ Functionalities in this package are
 * New
 * Rising
 * Search
+
+
 All these methods are async(await) since they make web requests
 ## How to use as CLI
 General usage
@@ -47,9 +49,11 @@ reddit rising
 ```
 This command is used to view a random post in rising section of reddit
 ```
-reddit search <value>
+reddit search <value> <type>
 ```
-This command intiates the search query against the value which you enter
+This command intiates the search query against the value which you enter and the type of request like
+* Only posts
+* Only Communities and Users
 ```
 reddit --help
 ```
