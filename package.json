@@ -4,7 +4,7 @@
   "description": "Command Line interface for veiwing reddit post",
   "main": "reddit.mjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "bin": {
     "reddit": "node --experimental-json-modules ./reddit.mjs"
@@ -27,5 +27,8 @@
     "commander": "^8.1.0",
     "node-fetch": "^3.0.0",
     "open": "^8.2.1"
+  },
+  "devDependencies": {
+    "jest": "^27.1.1"
   }
 }

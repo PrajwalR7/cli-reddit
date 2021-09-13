@@ -4,15 +4,6 @@ import fetch from 'node-fetch';
 import open from 'open';
 import chalk from 'chalk';
 import { program } from 'commander';
-import { readFile, readFileSync } from 'fs';
-import { version as ver } from './package.json';
-// const {argv} = yargs(process.argv.slice(2));
-
-// const pjson = readFileSync(new URL('package.json',import.meta.url),'utf-8',(err)=>{
-//     //console.log(err);
-// });
-
-//  console.log(ver);
 
 const options = program.opts();
 
@@ -66,7 +57,7 @@ program
 
 program.parse(process.argv);
 
-async function top(){
+export async function top(){
     try {
         const res = await fetch("https://reddit.com/.json")
         const data = await res.json();
@@ -85,7 +76,7 @@ async function top(){
     }
 }
 
-async function homepost(){
+export async function homepost(){
     try {
         const res=await fetch("https://www.reddit.com/.json");
         const data = await res.json()
@@ -104,7 +95,7 @@ async function homepost(){
     }
 }
 
-async function newpost(){
+export async function newpost(){
     try {
         const res = await fetch("https://www.reddit.com/new/.json");
         const data = await res.json();
@@ -123,7 +114,7 @@ async function newpost(){
     }
 }
 
-async function rising(){
+export async function rising(){
     try {
         const res = await fetch("https://www.reddit.com/rising/.json");
         const data = await res.json();
@@ -142,7 +133,7 @@ async function rising(){
     }
 }
 
-async function search(string){
+export async function search(string){
     try {
         //const searchelement = await string;
         console.log(string);
@@ -153,7 +144,7 @@ async function search(string){
     }
 }
 
-function onlyprint(title ,link){
+export function onlyprint(title ,link){
     let ctitle = chalk.yellow(title)
     let clink = chalk.green(link)
     console.log(`
