@@ -19,7 +19,7 @@
     "type": "git",
     "url": "https://github.com/PrajwalR7/reddit-cli.git"
   },
-  "homepage": "https://github.com/PrajwalR7/reddit-cli",
+  "homepage": "https://github.com/PrajwalR7/cli-reddit#readme",
   "author": "Prajwal R <rameshprajwal21@gmail.com>",
   "license": "ISC",
   "dependencies": {
