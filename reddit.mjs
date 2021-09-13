@@ -44,12 +44,11 @@ program
     })
 
 program 
-    .command(`search <string>`)
+    .command(`search <value>`)
     .alias('s')
     .description('Search on reddit')
-    .action(({string})=>{
-        console.log(string);
-        search({string});
+    .action((string)=>{
+        search(string);
     })
 
 program
@@ -133,11 +132,9 @@ export async function rising(){
     }
 }
 
-export async function search(string){
+export function search(string){
     try {
-        //const searchelement = await string;
-        console.log(string);
-       await open(`https://reddit.com/search/?q=${string}`);
+        open(`https://reddit.com/search/?q=${string}`);
     } catch (error) {
         var e = chalk.red("Couldnt fetch the requested url")
         console.log(e);
