@@ -44,11 +44,13 @@ program
     })
 
 program 
-    .command(`search <value>`)
+    .command(`search <value> <type>`)
     .alias('s')
     .description('Search on reddit')
-    .action((string)=>{
-        search(string);
+    .description('<type> : post --> to search only post')
+    .description('<type> : comu --> to search only communities')
+    .action((string,type)=>{
+        search(string,type);
     })
 
 program
@@ -132,9 +134,14 @@ export async function rising(){
     }
 }
 
-export function search(string){
+export function search(string,type){
     try {
-        open(`https://reddit.com/search/?q=${string}`);
+        if(type === 'post')
+            open(`https://www.reddit.com/search/?q=${string}&type=link`)
+        else if(type === 'comu')
+            open(`https://www.reddit.com/search/?q=${string}&type=sr%2Curser`);
+        else
+            open(`https://reddit.com/search/?q=${string}`);
     } catch (error) {
         var e = chalk.red("Couldnt fetch the requested url")
         console.log(e);
